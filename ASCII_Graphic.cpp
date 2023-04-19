@@ -41,10 +41,43 @@ int main()
 
     }
 
+    std::array<double, 100> matrix_y4;
+    for (int i = 0; i < matrix_y4.size(); i++)
+    {
+        //matrix_y4[i] = 15;
+        if (i >= 0)
+        {
+            matrix_y4[i]= 2;
+        }
+        if (i >= 50)
+        {
+            matrix_y4[i] = matrix_y4[49]*exp(-0.2*(i-50));
+        }
+        //std::cout << matrix_y4[i] << std::endl;
+    }
+
+    std::array<double, 100> matrix_y5;
+    for (int i = 0; i < matrix_y5.size(); i++)
+    {
+        //matrix_y4[i] = 15;
+        if (i >= 0)
+        {
+            matrix_y5[i] = 88 * exp(-0.2 * (i));
+        }
+        if (i >=12)
+        {
+            matrix_y5[i] = matrix_y5[11];
+        }
+        std::cout << matrix_y5[i] << std::endl;
+    }
+
+
     Plotter plotter;
     plotter.plotGraphic(matrix_y);
     plotter.plotGraphic(matrix_y2);
     plotter.plotGraphic(matrix_y3);
+    plotter.plotGraphic(matrix_y4);
+    plotter.plotGraphic(matrix_y5);
     
 }
 

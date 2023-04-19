@@ -42,6 +42,8 @@ double Plotter::delta(std::array<double, 100>& y)
 			y_min = y[i];
 		}
 	}
+	this->y_max = y_max;
+	this->y_min = y_min;
 	return y_max - y_min;
 }
 
@@ -73,16 +75,23 @@ void Plotter::plotGraphic(std::array<double, 100>& y)
 		
 		for (int k = 0; k < y_size; k++)
 		{
-			if ((y[k] >= (i * d / y_axis_size + d / (2 * y_axis_size) / 1)) and (y[k] <= ((i + 1) * d / y_axis_size) / 1))
+			if ((i == y_axis_size-1) and (y[k] == y_max))
 			{
 				print(char('o'));
 			}
-			else
+			else if ((i == 0) and (y[k] == y_min))
 			{
+				print(char('o'));
+			}
+			else if ((y[k] > (i * d / y_axis_size + d / (2 * y_axis_size) / 1)) and (y[k] <= ((i + 1) * d / y_axis_size) / 1))
+			{
+				print(char('o'));
+			}
+			else {
 				print(char(32));
 			}
 		}
-		print("\n");
+		print('\n');
 	}
 	printXaxis();
 

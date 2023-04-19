@@ -4,6 +4,8 @@ class Plotter
 {
 private:
 	const int size = 100;
+	double y_max;
+	double y_min;
 	//sconst int* y_Axis_Size = 10;
 
 	void printHeader();
