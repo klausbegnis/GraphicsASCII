@@ -4,6 +4,11 @@
 #include <iostream>
 #include <array>
 
+void clear()
+{
+    std::cout << "\x1B[2J\x1B[H";
+}
+
 int main()
 {
     Plotter plotter;
@@ -12,14 +17,11 @@ int main()
 
     for (size_t i = 0; i < matrix_y.size(); i++)
     {
-        matrix_y[i] = 0;
+        matrix_y[i] = i*0.1;
+        
     }
-    matrix_y[32] = -5;
-    matrix_y[88] = 14;
-   
     plotter.plotGraphic(matrix_y);
-
-    std::cout << "Hello World!\n" << std::endl;
+    
 }
 
 // Executar programa: Ctrl + F5 ou Menu Depurar > Iniciar Sem Depuração

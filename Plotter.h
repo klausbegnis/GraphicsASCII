@@ -4,10 +4,11 @@ class Plotter
 {
 private:
 	const int size = 100;
-	char pointer[2]{ '/',char(92) };
-	char y_axis[11]{ '|','|', '|', '|', '|', '|', '|', '|', '|','|' };
+	//sconst int* y_Axis_Size = 10;
+	
 
 	void printHeader();
+	void printXaxis();
 	double delta(std::array<double, 100>& y);
 
 public:
