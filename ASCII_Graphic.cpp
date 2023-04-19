@@ -9,18 +9,42 @@ void clear()
     std::cout << "\x1B[2J\x1B[H";
 }
 
+void normalizeArray(int& array, int start, int end)
+{
+
+}
+
+
 int main()
 {
-    Plotter plotter;
+    
 
     std::array<double, 100> matrix_y;
 
-    for (size_t i = 0; i < matrix_y.size(); i++)
+    for (int i = 0; i < matrix_y.size(); i++)
     {
-        matrix_y[i] = i*0.1;
+        matrix_y[i] = 1-i*0.1;
         
     }
+
+    std::array<double, 100> matrix_y2;
+    for (int i = 0; i < matrix_y2.size(); i++)
+    {
+        matrix_y2[i] = sin(0.1*i);
+        
+    }
+
+    std::array<double, 100> matrix_y3;
+    for (int i = 0; i < matrix_y3.size(); i++)
+    {
+        matrix_y3[i] = pow(i,2);
+
+    }
+
+    Plotter plotter;
     plotter.plotGraphic(matrix_y);
+    plotter.plotGraphic(matrix_y2);
+    plotter.plotGraphic(matrix_y3);
     
 }
 
